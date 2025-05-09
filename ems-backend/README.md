@@ -1,51 +1,92 @@
 # EMS Backend
 
+## Quick Start
+
+### Prerequisites
+- Java JDK 17 or higher
+- Maven 3.6 or higher
+
+### Installation
+```cmd
+cd ems-backend
+mvn clean install
+mvn spring-boot:run
+```
+
+### Access Points
+- Application: http://localhost:8080
+- H2 Console: http://localhost:8080/h2-console
+- Swagger UI: http://localhost:8080/swagger-ui.html
+
+### Database
+- H2 in-memory database
+- Automatically initialized with sample data
+- No manual setup required
+
+### API Documentation
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- OpenAPI Spec: http://localhost:8080/api-docs
+
+### Project Structure
+- `src/main/java/com/example/ems_backend/`
+  - `controller/` - REST endpoints
+  - `service/` - Business logic
+  - `repository/` - Data access
+  - `model/` - Entity classes
+  - `dto/` - Data transfer objects
+  - `config/` - Configuration classes
+
+### Key Features
+- Employee Management
+- Department Management
+- Payroll Processing
+- RESTful APIs
+- Swagger Documentation
+- H2 Database Integration
+
+### Troubleshooting
+1. Port 8080 already in use:
+   - Change port in application.properties
+   - Or stop the process using port 8080
+
+2. Build fails:
+   - Check Java version
+   - Verify Maven installation
+   - Check console for errors
+
 ## Setup Instructions
 
 1. **Prerequisites**
    - Java JDK 17 or higher
    - Maven 3.6 or higher
-   - MySQL 8.0 or higher
 
-2. **Database Setup**
-   ```sql
-   CREATE DATABASE ems_db;
-   ```
+2. **Database Configuration**
+   - The application uses H2 in-memory database for development
+   - H2 Console is available at: `http://localhost:8080/h2-console`
+   - Database credentials (from application.properties):
+     ```
+     JDBC URL: jdbc:h2:mem:emsdb
+     Username: sa
+     Password: password
+     ```
+   - Note: The database is automatically created and initialized with sample data on application startup
 
 3. **Configuration**
-   - Update `application.properties` with your database credentials:
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/ems_db
-   spring.datasource.username=your_username
-   spring.datasource.password=your_password
-   ```
+   - The application uses default configuration from `application.properties`
+   - Key configurations:
+     ```properties
+     # H2 Database Configuration
+     spring.datasource.url=jdbc:h2:mem:emsdb
+     spring.datasource.driverClassName=org.h2.Driver
+     spring.datasource.username=sa
+     spring.datasource.password=password
+     
+     # Enable H2 Console
+     spring.h2.console.enabled=true
+     spring.h2.console.path=/h2-console
+     ```
 
-4. **Installation**
-   ```cmd
-   :: Navigate to the backend directory
-   cd ems-backend
-
-   :: Install dependencies
-   mvn clean install
-   ```
-
-5. **Running the Application**
-   ```cmd
-   mvn spring-boot:run
-   ```
-   The application will be available at `http://localhost:8080`
-
-6. **API Documentation**
-   - Swagger UI is available at: `http://localhost:8080/swagger-ui.html`
-   - OpenAPI specification is available at: `http://localhost:8080/v3/api-docs`
-   - Features:
-     - Interactive API documentation
-     - Try-it-out functionality
-     - Request/response examples
-     - Schema visualization
-     - Authentication support
-
-## Project Structure
+4. **Project Structure**
 
 ### Core Components
 
@@ -269,19 +310,6 @@ DELETE /api/payrolls/{id}     - Delete payroll record
    - Environment variables
    - Database configuration
    - Security settings
-
-## Troubleshooting
-
-Common issues and solutions:
-1. **Database Connection Issues**
-   - Verify database credentials
-   - Check database server status
-   - Verify network connectivity
-
-2. **Build Issues**
-   - Check Java version
-   - Verify Maven configuration
-   - Check dependency conflicts
 
 ## Contributing
 

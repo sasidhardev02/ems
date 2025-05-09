@@ -1,26 +1,50 @@
 # EMS Frontend
 
-## Setup Instructions
+## Quick Start
 
-1. **Prerequisites**
-   - Node.js (v14 or higher)
-   - npm (v6 or higher)
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-2. **Installation**
-   ```cmd
-   :: Navigate to the frontend directory
-   cd ems-frontend
+### Installation
+```cmd
+cd ems-frontend
+npm install
+npm start
+```
 
-   :: Install dependencies
-   npm install
-   ```
+### Access
+- Application: http://localhost:3000
 
-3. **Running the Application**
-   ```cmd
-   :: Start the development server
-   npm start
-   ```
-   The application will be available at `http://localhost:3000`
+### Project Structure
+- `src/`
+  - `components/` - React components
+  - `services/` - API services
+  - `App.js` - Main application
+  - `index.js` - Entry point
+
+### Key Features
+- Employee Management
+- Department Management
+- Payroll Processing
+- Interactive Dashboard
+- Material-UI Components
+- Responsive Design
+
+### Available Scripts
+- `npm start` - Run development server
+- `npm test` - Run tests
+- `npm run build` - Build for production
+
+### Troubleshooting
+1. Port 3000 already in use:
+   - Change port in package.json
+   - Or stop the process using port 3000
+
+2. Build fails:
+   - Check Node.js version
+   - Clear node_modules and reinstall
+   - Check console for errors
 
 ## Project Structure
 
@@ -189,19 +213,6 @@
    - Environment variables
    - API endpoint configuration
    - Error tracking setup
-
-## Troubleshooting
-
-Common issues and solutions:
-1. **API Connection Issues**
-   - Verify backend server is running
-   - Check API endpoint configuration
-   - Verify network connectivity
-
-2. **Build Issues**
-   - Clear node_modules and reinstall
-   - Update dependencies
-   - Check for version conflicts
 
 ## Contributing
 
