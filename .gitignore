@@ -1,0 +1,36 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Dependencies
+node_modules/
+target/
+build/
+dist/
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Database
+*.db
+*.sqlite 
