@@ -13,7 +13,7 @@ A full-stack application for managing employees, departments, and payroll inform
 
 1. **Clone the repository**
    ```cmd
-   git clone https://github.com/your-username/ems.git
+   git clone https://github.com/sasidhardev02/ems.git
    cd ems
    ```
 
